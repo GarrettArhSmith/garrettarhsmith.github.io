@@ -1,0 +1,74 @@
+
+body {
+  padding: 10px 15px;
+  margin: 0;
+}
+
+button {
+  border: 1px solid black;
+  background-color: #e8e8e8;
+}
+button:focus {
+  outline: 0;
+}
+button:hover {
+  box-shadow: 2px 2px 3px #ddd;
+}
+button:active {
+  background-color: #ddd;
+  box-shadow: 1px 1px 2px #c1c1c1;
+}
+
+.smsq {
+  width: 25px;
+  margin: 0 0 0 10px;
+}
+
+.title {
+  background-color: white;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  z-index: 1;
+}
+
+.sect {
+  position: relative;
+  width: 420px;
+  min-height: 50px;
+  outline: 1px solid black;
+  margin: 15px 0;
+  padding: 10px 15px;
+  line-height: 1;
+}
+
+.resources {
+  text-align: center;
+  display: table;
+}
+
+.resources td {
+  width: 84px;
+  height: 20px;
+}
+
+/*.resources ul {
+  list-style: none;
+  padding: 0;
+  line-height: 0;
+  text-align: center;
+}
+
+.resources li {
+  display: inline-block;
+  padding: 0 0.5em;
+  font-weight: bold;
+}*/
+
+.workerAssignment {
+  margin-top: 1em;
+}
+
+.workers {
+  width: 100px;
+}

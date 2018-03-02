@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Untitled</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/colors.css">
+  </head>
+  <body>
+
+    <div class="resources sect">
+      <span class="title">Resources</span>
+      <table class="resources">
+        <tr>
+          <td class="food">Food:</td>
+          <td class="wood">Wood:</td>
+          <td class="stone">Stone:</td>
+          <td class="iron">Iron:</td>
+          <td class="gold">Gold:</td>
+        </tr>
+        <tr>
+          <td id="food">0</td>
+          <td id="wood">0</td>
+          <td id="stone">0</td>
+          <td id="iron">0</td>
+          <td id="gold">0</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="work sect">
+      <span class="title">Work</span>
+      <table>
+        <tr>
+          <td class="workers" id="workers">Workers: 0</td>
+          <td class="workers" id="idle">Idle: 0</td>
+        </tr>
+      </table>
+
+      <button onclick="hireWorker()">Hire Worker</button>
+      <button onclick="gatherFood()">Gather Food</button>
+      <button onclick="chopTree()">Chop Tree</button>
+      <table class="workerAssignment">
+        <tr>
+          <td id="onLumber">Workers on Lumber: 0/0</td>
+          <td><button id="addLumber" class="smsq">+</button></td>
+          <td><button id="subtractLumber" class="smsq">-</button></td>
+        </tr>
+        <tr>
+          <td id="onStone">Workers on Stone: 0/0</td>
+          <td><button id="addStone" class="smsq">+</button></td>
+          <td><button id="subtractStone" class="smsq">-</button></td>
+        </tr>
+        <tr>
+          <td id="onIron">Workers on Iron: 0/0</td>
+          <td><button id="addIron" class="smsq">+</button></td>
+          <td><button id="subtractIron" class="smsq">-</button></td>
+        </tr>
+        <tr>
+          <td id="onGold">Workers on Gold: 0/0</td>
+          <td><button id="addGold" class="smsq">+</button></td>
+          <td><button id="subtractGold" class="smsq">-</button></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="build sect">
+      <span class="title">Build</span>
+      <button onclick="buildLumberCamp()">Lumber Camp <span id="lumberCamps">0</span></button>
+      <button onclick="buildStoneQuarry()">Stone Quarry <span id="stoneQuarries">0</span></button>
+    </div>
+
+
+    <script src="./js/main.js"></script>
+    <script src="./js/interval.js"></script>
+  </body>
+</html>

@@ -43,6 +43,11 @@
       <button onclick="chopTree()">Chop Tree</button>
       <table class="workerAssignment">
         <tr>
+          <td id="onFood">Workers on Food: 0/0</td>
+          <td><button id="addFood" class="smsq">+</button></td>
+          <td><button id="subtractFood" class="smsq">-</button></td>
+        </tr>
+        <tr>
           <td id="onLumber">Workers on Lumber: 0/0</td>
           <td><button id="addLumber" class="smsq">+</button></td>
           <td><button id="subtractLumber" class="smsq">-</button></td>
@@ -67,12 +72,15 @@
 
     <div class="build sect">
       <span class="title">Build</span>
-      <button onclick="buildLumberCamp()">Lumber Camp <span id="lumberCamps">0</span></button>
-      <button onclick="buildStoneQuarry()">Stone Quarry <span id="stoneQuarries">0</span></button>
+      <button onclick="buildFarm()" class="build">Farm <span id="farms">0</span></button>
+      <button onclick="buildLumberCamp()" class="build">Lumber Camp <span id="lumberCamps">0</span></button>
+      <button onclick="buildStoneQuarry()" class="build">Stone Quarry <span id="stoneQuarries">0</span></button>
+      <button onclick="buildIronMine()" class="build">Iron Mine <span id="ironMines">0</span></button>
+      <button onclick="buildGoldMine()" class="build">Gold Mine <span id="goldMines">0</span></button>
     </div>
 
-
     <script src="./js/main.js"></script>
+    <script src="./js/workers.js"></script>
     <script src="./js/interval.js"></script>
   </body>
 </html>

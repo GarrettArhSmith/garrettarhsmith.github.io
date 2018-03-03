@@ -12,7 +12,7 @@ button:focus {
   outline: 0;
 }
 button:hover {
-  box-shadow: 2px 2px 3px #ddd;
+  box-shadow: 2px 2px 3px #dbdbdb;
 }
 button:active {
   background-color: #ddd;
@@ -52,23 +52,14 @@ button:active {
   height: 20px;
 }
 
-/*.resources ul {
-  list-style: none;
-  padding: 0;
-  line-height: 0;
-  text-align: center;
-}
-
-.resources li {
-  display: inline-block;
-  padding: 0 0.5em;
-  font-weight: bold;
-}*/
-
 .workerAssignment {
   margin-top: 1em;
 }
 
 .workers {
   width: 100px;
+}
+
+.build {
+  margin: 5px 10px 5px 0;
 }

@@ -4,15 +4,11 @@ var stone = 0;
 var iron = 0;
 var gold = 0;
 
-var workers = 0;
-var idle = 0;
-var onLumber = 0;
-var lumberMax = 0;
-var onStone = 0;
-var stoneMax = 0;
-
+var farms = 0;
 var lumberCamps = 0;
 var stoneQuarries = 0;
+var ironMines = 0;
+var goldMines = 0;
 
 function updateDOM(resource) {
   if (resource == food) {
@@ -32,8 +28,12 @@ function updateDOM(resource) {
   }
   if (resource == workers) {
     document.getElementById('workers').innerHTML = "Workers: " + workers;
-    idle = workers - onLumber - onStone;
+    idle = workers - onFood - onLumber - onStone;
     document.getElementById('idle').innerHTML = "Idle: " + idle;
+  }
+  if (resource == farms) {
+    document.getElementById('farms').innerHTML = farms;
+    document.getElementById('onFood').innerHTML = "Workers on Food: " + onFood + "/" + foodMax;
   }
   if (resource == lumberCamps) {
     document.getElementById('lumberCamps').innerHTML = lumberCamps;
@@ -44,23 +44,6 @@ function updateDOM(resource) {
     document.getElementById('onStone').innerHTML = "Workers on Stone: " + onStone + "/" + stoneMax;
   }
 }
-
-document.getElementById('addLumber').addEventListener("click", function() {
-  if (idle > 0 && lumberMax > 0 && onLumber < lumberMax) {
-    onLumber++;
-    idle--;
-    updateDOM(workers);
-    updateDOM(lumberCamps);
-  }
-});
-document.getElementById('subtractLumber').addEventListener("click", function() {
-  if (onLumber > 0) {
-    onLumber--;
-    idle++;
-    updateDOM(workers);
-    updateDOM(lumberCamps);
-  }
-});
 
 function hireWorker() {
   if (food >= 50) {
@@ -79,6 +62,16 @@ function gatherFood() {
 function chopTree() {
   wood += 5;
   updateDOM(wood);
+}
+
+function buildFarm() {
+  if (wood >= 50) {
+    wood -= 50;
+    updateDOM(wood);
+    farms++;
+    foodMax += 10;
+    updateDOM(farms);
+  }
 }
 
 function buildLumberCamp() {

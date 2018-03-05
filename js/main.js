@@ -4,12 +4,6 @@ var stone = 0;
 var iron = 0;
 var gold = 0;
 
-var farms = 0;
-var lumberCamps = 0;
-var stoneQuarries = 0;
-var ironMines = 0;
-var goldMines = 0;
-
 function updateDOM(resource) {
   if (resource == food) {
     document.getElementById('food').innerHTML = food;
@@ -28,29 +22,20 @@ function updateDOM(resource) {
   }
   if (resource == workers) {
     document.getElementById('workers').innerHTML = "Workers: " + workers;
-    idle = workers - onFood - onLumber - onStone;
+    idle = workers - farmers - lumberjacks - miners;
     document.getElementById('idle').innerHTML = "Idle: " + idle;
   }
   if (resource == farms) {
     document.getElementById('farms').innerHTML = farms;
-    document.getElementById('onFood').innerHTML = "Workers on Food: " + onFood + "/" + foodMax;
+    document.getElementById('farmers').innerHTML = "Farmers: " + farmers + "/" + maxFarmers;
   }
   if (resource == lumberCamps) {
     document.getElementById('lumberCamps').innerHTML = lumberCamps;
-    document.getElementById('onLumber').innerHTML = "Workers on Lumber: " + onLumber + "/" + lumberMax;
+    document.getElementById('lumberjacks').innerHTML = "Lumberjacks: " + lumberjacks + "/" + maxLumberjacks;
   }
-  if (resource == stoneQuarries) {
-    document.getElementById('stoneQuarries').innerHTML = stoneQuarries;
-    document.getElementById('onStone').innerHTML = "Workers on Stone: " + onStone + "/" + stoneMax;
-  }
-}
-
-function hireWorker() {
-  if (food >= 50) {
-    food -= 50;
-    updateDOM(food);
-    workers++;
-    updateDOM(workers);
+  if (resource == miningCamps) {
+    document.getElementById('miningCamps').innerHTML = miningCamps;
+    document.getElementById('miners').innerHTML = "Miners: " + miners + "/" + maxMiners;
   }
 }
 
@@ -64,12 +49,17 @@ function chopTree() {
   updateDOM(wood);
 }
 
+//BUILD
+var farms = 0;
+var lumberCamps = 0;
+var miningCamps = 0;
+
 function buildFarm() {
-  if (wood >= 50) {
-    wood -= 50;
+  if (wood >= 60) {
+    wood -= 60;
     updateDOM(wood);
     farms++;
-    foodMax += 10;
+    maxFarmers += 10;
     updateDOM(farms);
   }
 }
@@ -79,17 +69,17 @@ function buildLumberCamp() {
     wood -= 100;
     updateDOM(wood);
     lumberCamps++;
-    lumberMax += 10;
+    maxLumberjacks += 10;
     updateDOM(lumberCamps);
   }
 }
 
-function buildStoneQuarry() {
+function buildMiningCamp() {
   if (wood >= 100) {
     wood -= 100;
     updateDOM(wood);
-    stoneQuarries++;
-    stoneMax += 10;
-    updateDOM(stoneQuarries);
+    miningCamps++;
+    maxMiners += 10;
+    updateDOM(miningCamps);
   }
 }

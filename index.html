@@ -29,55 +29,57 @@
       </table>
     </div>
 
+    <div class="Wilderness sect">
+      <span class="title">Wilderness</span>
+      <button onclick="gatherFood()" class="spaced">Gather Food</button>
+      <button onclick="chopTree()" class="spaced">Chop Tree</button>
+    </div>
+
     <div class="work sect">
-      <span class="title">Work</span>
+      <span class="title">Workers</span>
       <table>
         <tr>
-          <td class="workers" id="workers">Workers: 0</td>
-          <td class="workers" id="idle">Idle: 0</td>
+          <td class="count" id="workers">Workers: 0</td>
+          <td class="count" id="idle">Idle: 0</td>
         </tr>
       </table>
 
-      <button onclick="hireWorker()">Hire Worker</button>
-      <button onclick="gatherFood()">Gather Food</button>
-      <button onclick="chopTree()">Chop Tree</button>
+      <button id="hire" class="workers">Hire Worker</button>
+      <button id="hire10" class="workers">x10</button>
+      <button id="hire100" class="workers">x100</button>
+      <button id="hireMax" class="workers">Max</button>
       <table class="workerAssignment">
         <tr>
-          <td id="onFood">Workers on Food: 0/0</td>
-          <td><button id="addFood" class="smsq">+</button></td>
-          <td><button id="subtractFood" class="smsq">-</button></td>
+          <td id="farmers">Farmers: 0/0</td>
+          <td><button id="addFarmer" class="smsq add">+</button></td>
+          <td><button id="addFarmer10" class="add">x10</button></td>
+          <td><button id="subtractFarmer" class="smsq sub">-</button></td>
+          <td><button id="subtractFarmer10" class="sub">x10</button></td>
         </tr>
         <tr>
-          <td id="onLumber">Workers on Lumber: 0/0</td>
-          <td><button id="addLumber" class="smsq">+</button></td>
-          <td><button id="subtractLumber" class="smsq">-</button></td>
+          <td id="lumberjacks">Lumberjacks: 0/0</td>
+          <td><button id="addLumberjack" class="smsq add">+</button></td>
+          <td><button id="addLumberjack10" class="add">x10</button></td>
+          <td><button id="subtractLumberjack" class="smsq sub">-</button></td>
+          <td><button id="subtractLumberjack10" class="sub">x10</button></td>
         </tr>
         <tr>
-          <td id="onStone">Workers on Stone: 0/0</td>
-          <td><button id="addStone" class="smsq">+</button></td>
-          <td><button id="subtractStone" class="smsq">-</button></td>
-        </tr>
-        <tr>
-          <td id="onIron">Workers on Iron: 0/0</td>
-          <td><button id="addIron" class="smsq">+</button></td>
-          <td><button id="subtractIron" class="smsq">-</button></td>
-        </tr>
-        <tr>
-          <td id="onGold">Workers on Gold: 0/0</td>
-          <td><button id="addGold" class="smsq">+</button></td>
-          <td><button id="subtractGold" class="smsq">-</button></td>
+          <td id="miners">Miners: 0/0</td>
+          <td><button id="addMiner" class="smsq add">+</button></td>
+          <td><button id="addMiner10" class="add">x10</button></td>
+          <td><button id="subtractMiner" class="smsq sub">-</button></td>
+          <td><button id="subtractMiner10" class="sub">x10</button></td>
         </tr>
       </table>
     </div>
 
     <div class="build sect">
       <span class="title">Build</span>
-      <button onclick="buildFarm()" class="build">Farm <span id="farms">0</span></button>
-      <button onclick="buildLumberCamp()" class="build">Lumber Camp <span id="lumberCamps">0</span></button>
-      <button onclick="buildStoneQuarry()" class="build">Stone Quarry <span id="stoneQuarries">0</span></button>
-      <button onclick="buildIronMine()" class="build">Iron Mine <span id="ironMines">0</span></button>
-      <button onclick="buildGoldMine()" class="build">Gold Mine <span id="goldMines">0</span></button>
+      <button onclick="buildFarm()" class="spaced">Farm <span id="farms">0</span></button>
+      <button onclick="buildLumberCamp()" class="spaced">Lumber Camp <span id="lumberCamps">0</span></button>
+      <button onclick="buildMiningCamp()" class="spaced">Mining Camp <span id="miningCamps">0</span></button>
     </div>
+    <p id="time"></p>
 
     <script src="./js/main.js"></script>
     <script src="./js/workers.js"></script>

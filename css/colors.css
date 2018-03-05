@@ -1,3 +1,5 @@
+
+/*RESOURCES*/
 #food, .food {
   color: #188415;
 }
@@ -12,4 +14,20 @@
 }
 #gold, .gold {
   color: #e0a400;
+}
+
+
+/*WORKERS*/
+.add {
+  color: rgb(29, 89, 18);
+}
+.add:active {
+  background-color: rgb(190, 219, 190);
+}
+
+.sub {
+  color: rgb(127, 33, 28);
+}
+.sub:active {
+  background-color: rgb(221, 201, 201);
 }
